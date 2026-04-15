@@ -3,22 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate GitHub Quiz</title>
+    <title>Professional MCQ Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="quiz-container">
-        <!-- Category Selection Screen -->
+        <!-- Header with Theme Toggle -->
+        <div class="top-bar">
+            <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+
+        <!-- 1. Category Selection Screen -->
         <div id="category-screen">
-            <h2>Select a Category</h2>
-            <div class="category-list">
-                <button class="cat-btn" onclick="startQuiz('JavaScript')">JavaScript</button>
-                <button class="cat-btn" onclick="startQuiz('HTML')">HTML</button>
-                <button class="cat-btn" onclick="startQuiz('CSS')">CSS</button>
+            <h2>Select a Topic</h2>
+            <div class="category-grid">
+                <div class="cat-card" onclick="startQuiz('JavaScript')">
+                    <div class="card-icon">📜</div>
+                    <h3>JavaScript</h3>
+                    <p>Logic & Syntax</p>
+                </div>
+                <div class="cat-card" onclick="startQuiz('HTML')">
+                    <div class="card-icon">🌐</div>
+                    <h3>HTML</h3>
+                    <p>Structure & Tags</p>
+                </div>
+                <div class="cat-card" onclick="startQuiz('CSS')">
+                    <div class="card-icon">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Design & Layout</p>
+                </div>
             </div>
         </div>
 
-        <!-- Quiz Screen -->
+        <!-- 2. Quiz Screen -->
         <div id="quiz-box" class="hidden">
             <div class="progress-container"><div id="progress-bar"></div></div>
             <div class="quiz-header">
@@ -27,7 +44,7 @@
                 <span>Score: <span id="score">0</span></span>
             </div>
             <div id="quiz">
-                <h2 id="question">Question Text</h2>
+                <h2 id="question"></h2>
                 <form id="options-form">
                     <label class="option-label"><input type="radio" name="answer" value="a"> <span id="text-a"></span></label>
                     <label class="option-label"><input type="radio" name="answer" value="b"> <span id="text-b"></span></label>
@@ -38,16 +55,16 @@
             <button id="next" class="hidden">Next Question</button>
         </div>
 
-        <!-- Result Screen -->
+        <!-- 3. Result Screen -->
         <div id="result-screen" class="hidden">
             <h2>Quiz Results</h2>
             <div id="result-stats"></div>
             <div id="review-section"></div>
-            <button class="cat-btn" onclick="location.reload()">Restart Quiz</button>
+            <button class="main-btn" onclick="location.reload()">Restart Quiz</button>
         </div>
     </div>
 
-    <!-- Toast -->
+    <!-- Toast Notification -->
     <div id="toast" class="toast hidden"></div>
 
     <script src="script.js"></script>
