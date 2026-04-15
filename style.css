@@ -1,0 +1,30 @@
+body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.quiz-container { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 450px; text-align: center; }
+
+/* Screens */
+.hidden { display: none; }
+.category-list { display: flex; flex-direction: column; gap: 10px; }
+.cat-btn { padding: 12px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; }
+
+/* Progress & Header */
+.progress-container { width: 100%; height: 8px; background: #eee; border-radius: 10px; margin-bottom: 15px; overflow: hidden; }
+#progress-bar { height: 100%; width: 0%; background: #007bff; transition: 0.4s; }
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-weight: bold; color: #555; }
+#back-btn { background: #eee; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+
+/* Options */
+.option-label { display: block; padding: 12px; margin: 8px 0; border: 2px solid #eee; border-radius: 8px; cursor: pointer; text-align: left; }
+.option-label.correct { background: #d4edda; border-color: #28a745; }
+.option-label.wrong { background: #f8d7da; border-color: #dc3545; }
+
+/* Review Section */
+#review-section { max-height: 250px; overflow-y: auto; margin: 20px 0; border-top: 1px solid #eee; text-align: left; font-size: 0.9rem; }
+.review-item { padding: 10px 0; border-bottom: 1px solid #fafafa; }
+.rev-q { font-weight: bold; }
+.rev-a { color: #28a745; }
+.rev-w { color: #dc3545; }
+
+/* Toast */
+.toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); padding: 10px 20px; border-radius: 20px; color: #fff; font-weight: bold; z-index: 100; }
+.toast.success { background: #28a745; }
+.toast.error { background: #dc3545; }
