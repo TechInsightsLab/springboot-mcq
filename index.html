@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate GitHub Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Category Selection Screen -->
+        <div id="category-screen">
+            <h2>Select a Category</h2>
+            <div class="category-list">
+                <button class="cat-btn" onclick="startQuiz('JavaScript')">JavaScript</button>
+                <button class="cat-btn" onclick="startQuiz('HTML')">HTML</button>
+                <button class="cat-btn" onclick="startQuiz('CSS')">CSS</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-box" class="hidden">
+            <div class="progress-container"><div id="progress-bar"></div></div>
+            <div class="quiz-header">
+                <button id="back-btn" onclick="goBack()">← Menu</button>
+                <span>Q: <span id="current-pos">1</span>/<span id="total-questions">0</span></span>
+                <span>Score: <span id="score">0</span></span>
+            </div>
+            <div id="quiz">
+                <h2 id="question">Question Text</h2>
+                <form id="options-form">
+                    <label class="option-label"><input type="radio" name="answer" value="a"> <span id="text-a"></span></label>
+                    <label class="option-label"><input type="radio" name="answer" value="b"> <span id="text-b"></span></label>
+                    <label class="option-label"><input type="radio" name="answer" value="c"> <span id="text-c"></span></label>
+                    <label class="option-label"><input type="radio" name="answer" value="d"> <span id="text-d"></span></label>
+                </form>
+            </div>
+            <button id="next" class="hidden">Next Question</button>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="hidden">
+            <h2>Quiz Results</h2>
+            <div id="result-stats"></div>
+            <div id="review-section"></div>
+            <button class="cat-btn" onclick="location.reload()">Restart Quiz</button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
